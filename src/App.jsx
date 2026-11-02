@@ -6,7 +6,7 @@ function App() {
   const [message, setMessage] = useState("Checking backend...");
 
   useEffect(() => {
-    fetch("http://localhost:5000/health")
+    fetch(`${import.meta.env.VITE_API_BASE_URL}/health`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Backend request failed");
